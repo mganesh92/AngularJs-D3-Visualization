@@ -1,0 +1,182 @@
+text, path{
+	cursor:pointer;
+}
+#pieChart {    
+	position:absolute;
+	top:10px;
+	left:610px;
+	height: 150px;
+	width: 500px;
+	
+}
+#lineChart {    
+	position:absolute;
+	top:10px;
+	left:5px;
+	width:400px;
+	height: 400px;
+}
+#barChart {
+	position:absolute;
+	top:160px;
+	left:10px;
+	height: 250px;
+	width: 500px;
+}
+.slice {
+   font-size: 12pt;
+   font-family: Verdana;
+   fill: white; //svg specific - instead of color
+   font-weight: bold;	
+  		} 
+
+/*for line chart*/
+.axis path, .axis line {
+    fill: none;
+    stroke: black;
+    shape-rendering: crispEdges; //The shape-rendering property is an SVG attribute, used here to make sure our axis and its tick mark lines are pixel-perfect. 
+}
+
+.line {
+  fill: none;
+  /*stroke: steelblue;*/
+  stroke-width: 3px;
+}
+
+.dot {
+  /*fill: white;*/
+  /*stroke: steelblue;*/
+  stroke-width: 1.5px;
+  }
+				
+
+.axis text {
+    font-family: Verdana;
+    font-size: 11px;
+}
+
+.title {
+	 font-family: Verdana;
+    font-size: 15px;	
+		
+}
+
+.xAxis {
+    font-family: verdana;
+    font-size: 11px;
+    fill: black;
+}  
+
+.yAxis {
+    font-family: verdana;
+    font-size: 11px;
+    fill: white;
+}
+
+  
+table {
+	border-collapse:collapse;
+	border: 0px;	
+	font-family: Verdana;	
+	color: #5C5558;
+	font-size: 12px;
+	text-align: right;			
+}
+
+td {
+	padding-left: 10px;		
+}
+
+#lineChartTitle1 {
+	font-family: Verdana;
+	font-size  : 14px;
+	fill       : lightgrey;
+	font-weight: bold;
+	text-anchor: middle;
+}
+
+#lineChartTitle2 {
+	font-family: Verdana;
+	font-size  : 72px;
+	fill       : grey;
+	text-anchor: middle;
+	font-weight: bold;
+	/*font-style: italic;*/
+}
+
+/* Main WebPage CSS*/
+
+body{
+	font-family: verdana;
+}
+input[placeholder]{
+    text-align:center;
+}
+textarea[placeholder]{
+    text-align:center;
+}
+table{
+	font-size: 12px;
+	background-color: rgba(255,255,255,0.8);
+}
+.table-css{
+	border-style: solid;
+	border-radius: 10px !important;
+	border-width: 1px !important;
+	border-color: #faebcc;
+}
+th a{
+	text-decoration: none;
+	color: rgba(255,0,0,0.6);
+}
+th a:hover{
+	text-decoration: none;
+	color: rgba(255,0,0,0.8);
+}
+td{
+	text-align: left !important;
+	padding-left: 15px !important;
+}
+th{
+	text-align: left !important;
+	padding-left: 10px !important;
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+}
+td a{
+	text-decoration: none;
+	color: rgba(255,0,0,0.8);
+}
+td a:hover{
+	text-decoration: none;
+	color: rgba(255,0,0,1);
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0,0,0,0.1);
+    font-size: 14px;
+}
+html,body{
+    height: 100% !important;
+}
+
+#holder {
+    min-height: 100% !important;
+    position:relative !important;
+}
+
+#body {
+    padding-bottom: 100px !important;
+    min-height: 800px !important;
+}
+
+#footer{
+    bottom: 0 !important;
+    height: 50px;
+    left: 0;
+    position: absolute !important;
+    right: 0;
+}

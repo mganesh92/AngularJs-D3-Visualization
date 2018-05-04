@@ -1,0 +1,125 @@
+<!-- ================================================================
+Author: Meenakshi Ganesh
+Project: Adobe Programming Exercise
+================================================================ -->
+<!DOCTYPE html>
+<html lang="en" ng-app="AngularD3Visualization">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=10">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Adobe Programming Exercise</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/d3chart.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body> 
+   <!-- JQuery js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- BootStrap Js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- D3Js -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <!-- JS Libraries for Angulat.UI and Angular-Main-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.min.js"></script>    
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.14.3.min.js"></script>
+    <!-- App Js script -->
+    <script src="app.js"></script>   
+    <!-- Hide all if JavaSCript, jQuery and AngularJS is disabled -->
+    <div id="JavaScriptPart" class="hidden">
+      <div ng-controller="D3ChartController">
+        <div class="container-fluid" ng-init="drawD3Chart()">
+          <div class="row">
+            <h2 class="text-center text-success" style="margin-bottom : 0px;">
+             Resource Allocation For Project <br> <br>
+            </h2>
+            <div class="col-md-offset-1 col-md-10 col-sm-12"> <br>              
+              <table class="table table-hover table-condensed table-striped">
+                <thead>
+                  <tr>
+                    <th colspan="4">
+                      <form role="form" ng-submit="addEmployee()" class="form-horizontal">
+                        <div class="row">
+                          <div class="form-group">
+                            <label for="employees" class="col-sm-2 control-label">Employee Name : </label>
+                            <div class="col-sm-7">
+                              <input type="text" ng-model="employees.name" placeholder="Add Employee Name" class="form-control">
+                            </div>
+                            <div class="col-sm-3">
+                              <input type="submit" class="btn btn-success btn-block" value="Add">
+                            </div>
+                          </div>
+                        </div>
+                      </form>                      
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="employees in employeeList" id="table-data">
+                    <td>
+                      <input type="text" ng-model="employees.name" class="form-control">
+                    </td>
+                    <td>
+                      <div class="panel panel-warning">
+                        <div class="panel-heading" ng-click="isCollapsed = !isCollapsed" style="cursor: pointer;">
+                          {{employees.name}} 
+
+                          <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': !isCollapsed, 'glyphicon-chevron-right': isCollapsed}"></i>
+                          
+                        </div>
+                        <div class="panel-body reduce-padding" uib-collapse="isCollapsed">
+                        <table class="table table-hover table-condensed table-striped table-css">
+                        <thead>
+                          <tr>
+                            <th style="width:30px!important"> Project Activity </th> 
+                            <th style="width:60px!important"> </th> 
+                            <th> Hours Spent(per week) </th>
+                          </tr>
+                        </thead>
+                          <tbody>
+                            <tr ng-repeat="item in employees.hours">
+                              <td style="width:30px!important">
+                                <label class="text-left"> {{item.employeeActivity}} </label>
+                              </td>
+                              <td style="width:60px!important"> : </td>
+                              <td>
+                                <strong ng-hide="EditOption"> {{item.hours}} </strong>
+                                <div class="form-group">
+                                  <input type="text" ng-model="hours.updated[$index]" placeholder="{{item.hours}}" class="form-control" ng-show="EditOption">
+                                </div>
+                                
+                              </td>
+                            </tr>                             
+                          </tbody>
+                        </table>
+                        <button type="button" class="btn btn-info btn-block" ng-click="EditOption=true" ng-hide="EditOption">Edit</button>
+                        <button type="button" class="btn btn-success btn-block" ng-click="updateEmployeeList($index, hours);EditOption=false;" ng-show="EditOption">Save</button>
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btn btn-warning btn-block" ng-click="drawD3Chart()">Update</button> 
+                      <!-- index : {{$index}} -->
+                    </td>  
+                    <td>
+                      <button class="btn btn-danger btn-block" ng-click="removeEmployee($index); drawD3Chart()" aria-label="Remove">Delete</button>
+                    </td>                                       
+                  </tr>
+                </tbody>
+              </table>  
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-offset-2 col-lg-6 col-md-offset-1 col-md-10 col-sm-12">
+              <div class="form-group">
+                <div id="charts"></div>
+              </div>
+            </div>
+          </div>  
+        </div>
+      </div>
+    </div> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>    
+   
+  </body>
+</html>

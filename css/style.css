@@ -1,0 +1,104 @@
+/* Main WebPage CSS*/
+
+body{
+	font-family: serif;	
+}
+
+input{
+    text-align:center;
+}
+input[placeholder]{
+    /*text-align:center;width: 20em;  height: 2em;*/
+}
+
+textarea[placeholder]{
+    text-align:center;
+}
+.panel-heading{
+	font-size: 15px;
+}
+
+table{
+	font-size: 12px;
+	background-color: rgba(255,255,255,0.8);
+}
+.table-css{
+	border-style: solid;
+	border-radius: 10px !important;
+	border-width: 1px !important;
+	border-color: #faebcc;
+}
+th a{
+	text-decoration: none;
+	color: rgba(255,0,0,0.6);
+}
+th a:hover{
+	text-decoration: none;
+	color: rgba(255,0,0,0.8);
+}
+td{
+	text-align: left !important;
+	padding-left: 15px !important;
+}
+th{
+	text-align: left !important;
+	padding-left: 10px !important;
+	padding-top: 12px !important;
+	padding-bottom: 12px !important;
+}
+td a{
+	text-decoration: none;
+	color: rgba(255,0,0,0.8);
+}
+td a:hover{
+	text-decoration: none;
+	color: rgba(255,0,0,1);
+}
+footer {
+    
+    bottom: 0;
+    width: 100%;
+    padding: 12px;
+    background-color: rgba(0,0,0,0.1);
+    font-size: 14px;
+}
+html,body{
+    height: 100% !important;
+}
+
+tbody tr td:first-child {
+	width: 200px !important;
+	padding-top: 15px !important;
+	padding-bottom: 0px !important;
+}
+tbody tr td:nth-child(2) {
+	padding-top: 15px !important;
+	padding-bottom: 0px !important;
+}
+tbody tr td:nth-child(3) {
+	width: 140px !important;
+	padding-top: 15px !important;
+	padding-bottom: 0px !important;
+}
+tbody tr td:nth-child(4) {
+	width: 140px !important;
+	padding-top: 15px !important;
+	padding-bottom: 0px !important;
+	color: pink
+}
+
+.align-center{
+	text-align: center!important;
+}
+
+#charts{
+	position: relative;
+}
+
+#pieChart svg{
+	overflow: overlay;
+}
+
+#lineChart svg{
+	overflow: overlay;
+}
